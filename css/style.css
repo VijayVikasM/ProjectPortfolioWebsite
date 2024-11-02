@@ -6,8 +6,14 @@
     --bg-black-50:#e8dfec;
     --text-black-900:#302e4d;
     --text-black-700:#504e70;
-
-
+}
+body.dark 
+{
+    --bg-black-900:#151515;
+    --bg-black-100:#222222;
+    --bg-black-50:#393939;
+    --text-black-900:#ffffff;
+    --text-black-700:#e9e9e9;
 }
 body
 {
@@ -265,12 +271,12 @@ ul
 {
     min-height: 100vh;
     display: flex;
-    color: var(--text-black-100);
+    color: var(--text-black-900);
 }
 .home .home-info
 {
-    flex: 0 0 50%;
-    max-width: 100%;
+    flex: 0 0 60%;
+    max-width: 60%;
     margin-left: 0px;
     margin-bottom: 10px;
 }
@@ -461,7 +467,7 @@ h3.my-profession
 .about .about-content .education,
 .about .about-content .experience
 {
-    flex: 0 0 50%;
+    flex: 0 0 100%;
     max-width: 100%;
     margin-top: 30px;
     margin-left: 0px;
@@ -687,33 +693,80 @@ h3.my-profession
     color: var(--text-black-700);
     font-weight: 400;
 }
+/* Existing CSS at the top */
 
-@media (max-width:1440px)
-{
-    .aside
-    {
-        left: -270px;
+@media (max-width: 992px) {
+    /* Adjust the container padding */
+    .container {
+        padding: 20px;
     }
-    .main-content
-    {
-        padding-left: 0;
+
+    /* Stack aside navigation below main content */
+    .aside {
+        width: 100%;
+        position: relative;
+        border-right: none;
     }
-    .about .about-content .personal-info .info-item p span
-    {
-        display: black;
-        margin-left: 0;
+
+    /* Adjust padding and hide the profile image on smaller screens */
+    .home-info {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .home-img {
+        display: none;
+    }
+
+    /* Adjust skills and info sections */
+    .skills-columns {
+        display: block;
+        padding: 10px;
+    }
+
+    .skills-list {
+        padding: 0;
+    }
+
+    /* Stack timeline items vertically */
+    .timeline-box {
+        padding: 0;
+        margin: auto;
+    }
+
+    /* Center the buttons */
+    .buttons {
+        text-align: center;
     }
 }
-@media (min-width: 1440px) {
-    .section {
-        padding: 0 50px;
+
+@media (max-width: 768px) {
+    /* Stack columns fully on top of each other */
+    .service-item, .portfolio-item, .contact-info-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
     }
-    .main-content {
-        padding-left: 350px;
+
+    /* Center footer text */
+    footer {
+        text-align: center;
     }
-    .home .home-info,
-    .about .about-content {
-        flex: 0 0 60%;
-        max-width: 60%;
+}
+
+@media (max-width: 576px) {
+    /* Smaller padding and font for mobile view */
+    .padd-15 {
+        padding: 5px;
+    }
+
+    /* Simplify header and reduce font sizes for mobile */
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
     }
 }
